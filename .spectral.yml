@@ -1,0 +1,11 @@
+extends: spectral:oas
+rules:
+  as-operation-id-camel-case:
+    description: Operation Id must be cammelCase
+    given: "$.paths.*[?( @property === 'get' || @property === 'put' || @property === 'post' || @property === 'delete' || @property === 'options' || @property === 'head' || @property === 'patch' || @property === 'trace' )]"
+    severity: error
+    then:
+      field: operationId
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-z0-9]*([a-z0-9]|[A-Z0-9]+)*$'
