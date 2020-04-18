@@ -1,0 +1,1 @@
+# Spectral Test for issue [#1097](https://github.com/stoplightio/spectral/issues/1097)
